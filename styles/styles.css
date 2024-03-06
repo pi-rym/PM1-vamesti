@@ -26,7 +26,7 @@ body {
   padding-top: 10px;
   text-align: center;
   line-height: 20px;
-  font-size: 16px;
+  font-size: 16px ;
   color: white;
 }
 
@@ -43,7 +43,8 @@ body {
 }
 
 #personalTag > article > img {
-  width: 100%;
+  width: auto;
+  height: 100%;
   object-fit: contain;
   -o-object-fit: contain;
 }
@@ -77,18 +78,28 @@ body {
 
 #favTec > article,
 #personalTag > article {
-  border-radius: 10px;
+  border-radius: 10%;
 }
 
 #personalTag,
 #favTec > article:hover {
   box-shadow: 0px 0px 50px -20px rgb(136, 129, 219);
-  animation: shadow 2s infinite alternate;
+  animation: shadow 1s infinite alternate;
+}
+
+#favTec > article:hover {
+  animation: borderRadiusIncrease 1s forwards , shadowIncrease 1.5s forwards;
+  transition: hover 1s ease-in-out;
 }
 
 #favTec > article {
+  animation: borderRadiusDecrease 1s forwards, shadowDecrease 1.5s forwards;
   transition: box-shadow 0.5s ease-in-out;
+  transition: border-radius 1s ease-in-out;
+  transition: width 1s ease-in-out;
 }
+
+
 
 #favTec > article > p {
   margin: 0 auto;
@@ -98,11 +109,16 @@ body {
 }
 
 #favTec > article > img {
-  width: 70%;
+  width: 50%;
   object-fit: contain;
   -o-object-fit: contain;
   object-position: center;
   -o-object-position: center;
+  transition: width 1s ease-in-out;
+}
+
+#favTec > article > img:hover {
+  width: 40%;
 }
 
 #favActivity {
@@ -187,6 +203,43 @@ h1 {
   }
 }
 
+@keyframes borderRadiusIncrease {
+  0% {
+    border-radius: 10%;
+  }
+  100% {
+    border-radius: 50%;
+  }
+}
+
+@keyframes borderRadiusDecrease {
+  0% {
+    border-radius: 50%;
+  }
+  100% {
+    border-radius: 10%;
+  }
+}
+
+@keyframes shadowIncrease {
+  0% {
+    box-shadow: 0px 0px 50px -20px rgb(136, 129, 219, 0);
+  }
+  100% {
+    box-shadow: 0px 0px 50px -20px rgb(136, 129, 219, 1);
+  }
+}
+
+@keyframes shadowDecrease {
+  0% {
+    box-shadow: 0px 0px 50px -20px rgb(136, 129, 219, 1);
+  }
+  100% {
+    box-shadow: 0px 0px 50px -20px rgb(136, 129, 219, 0);
+  }
+}
+
+
 @media (min-width: 525px) {
   body {
     width: 75vw;
@@ -238,7 +291,7 @@ h1 {
 
   #personalTag > article > p {
     line-height: 30px;
-    font-size: 1.5rem;
+    font-size: 1.5em;
     margin: 10px;
   }
 
@@ -263,7 +316,7 @@ h1 {
     margin: 15px;
   }
 
-  #newActivity{
+  #newActivity {
     margin: 20px;
     width: 300px;
   }
