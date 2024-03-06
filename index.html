@@ -1,11 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="/styles/reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <title>M1-VAMESTI</title>
 </head>
+
 <body>
-    <h1>Proyecto M1</h1>
+
+    <section>
+        <h1 class="kanit-regular">PROYECTO M1</h1>
+        <hr>
+        <div id="personalTag">
+            <article>
+                <img src="/assets/img/Profile.jpg" alt="Mi Foto">
+                <p class="kanit-regular">¡Hola! 🖐️ Soy <strong>Victor</strong>, y me apasiona todo lo relacionado con
+                    los
+                    videojuegos, la ciencia, la naturaleza y el mundo tech. En este espacio, compartiré con ustedes todo
+                    tipo de
+                    contenido interesante que encuentre, incluyendo mis tecnologías favoritas, aquellas que despierten
+                    mi curiosidad
+                    y, por supuesto, mis proyectos personales. Espero que podamos explorar juntos este increíble
+                    universo de
+                    conocimientos y emociones. ¡Vamos, no te pierdas nada! </p>
+            </article>
+        </div>
+
+    </section>
+
+    <section>
+        <h2 class="kanit-regular">Mis Tecnologias</h2>
+        <hr>
+        <div id="favTec">
+
+        </div>
+    </section>
+
+
+    <section>
+        <h2 class="kanit-regular">Actividades Favoritas</h2>
+        <hr>
+        <form id="newActivity">
+            
+            <div id="favActivity" class="kanit-regular">
+                <div>
+                    <label for="title">Actividad</label>
+                    <input type="text" name="title">
+                </div>
+                <div>
+                    <label for="image">Imagen</label>
+                    <input type="text" name="image">
+                </div>
+                <div>
+                    <label for="description">Descripcion</label>
+                    <textarea id="" name="description"></textarea>
+                </div>
+                <button id="activity" type="submit">Agregar</button>
+            </div>
+            
+        </form>
+        <div id="addActivity">
+
+        </div>
+    </section>
 </body>
+
 </html>
+<script type="module" src="./scripts/index.js"></script>

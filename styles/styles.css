@@ -1,0 +1,270 @@
+:root {
+  background-color: rgb(26, 2, 48);
+  --width-m: 1200px;
+  --radius: 50px;
+}
+body {
+  box-sizing: border-box;
+  margin: 0 auto !important;
+  width: calc(100vw - 10%);
+}
+
+/* section{
+  box-sizing: border-box;
+  margin: 0 auto;
+  width: 100%;
+} */
+
+#personalTag {
+  position: relative;
+  background-color: rgb(26, 4, 60);
+  width: 100%;
+}
+
+#personalTag > article > p {
+  padding-bottom: 10px;
+  padding-top: 10px;
+  text-align: center;
+  line-height: 20px;
+  font-size: 16px;
+  color: white;
+}
+
+.kanit-regular {
+  font-family: "Kanit", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.kanit-extralight {
+  font-family: "Kanit", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+#personalTag > article > img {
+  width: 100%;
+  object-fit: contain;
+  -o-object-fit: contain;
+}
+
+#personalTag > article > p {
+  width: 100%;
+}
+
+#favTec {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  width: auto;
+  color: white;
+  background-color: rgb(26, 4, 60);
+}
+
+#favTec > article {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  margin: 10px auto;
+  width: calc(100vw / 5);
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+#favTec > article,
+#personalTag > article {
+  border-radius: 10px;
+}
+
+#personalTag,
+#favTec > article:hover {
+  box-shadow: 0px 0px 50px -20px rgb(136, 129, 219);
+  animation: shadow 2s infinite alternate;
+}
+
+#favTec > article {
+  transition: box-shadow 0.5s ease-in-out;
+}
+
+#favTec > article > p {
+  margin: 0 auto;
+  width: 100%;
+  font-weight: 500;
+  font-size: 0.7rem !important;
+}
+
+#favTec > article > img {
+  width: 70%;
+  object-fit: contain;
+  -o-object-fit: contain;
+  object-position: center;
+  -o-object-position: center;
+}
+
+#favActivity {
+  display: flex;
+  flex-direction: column;
+  font-size: 9px;
+  background-color: rgb(26, 4, 60);
+  padding: 10px;
+}
+
+#newActivity {
+  text-align: end;
+  width: 100%;
+}
+
+#favActivity > div {
+  position: relative;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+#favActivity > div > input {
+  height: 30px;
+}
+
+#favActivity > div > input,
+textarea {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 5px auto;
+  background-color: rgb(16, 12, 75);
+  outline: none;
+  border: 0.5px solid gray;
+  border-radius: 5px;
+}
+
+#favActivity > div > input,
+textarea ::placeholder {
+  color: lightgray;
+  font-size: 0.7rem !important;
+}
+
+#favActivity > div > label {
+  position: absolute;
+  color: white;
+  top: 0%;
+  left: 5%;
+}
+
+h1 {
+  font-size: 2rem !important;
+}
+h2 {
+  font-size: 1.5rem !important;
+}
+
+h2,
+h1 {
+  margin: 10px !important;
+  text-align: center;
+  padding: 50px;
+  font-size: 1rem;
+  color: white;
+}
+
+#activity {
+  background-color: rgb(17, 8, 82);
+  border: 0.5px solid lightgray;
+  border-radius: 10px;
+  height: 30px;
+  color: white;
+  width: 30%;
+}
+
+@keyframes shadow {
+  0% {
+    box-shadow: 0px 0px 50px -20px rgb(136, 129, 219);
+  }
+  100% {
+    box-shadow: 0px 0px 50px -30px rgb(157, 11, 150);
+  }
+}
+
+@media (min-width: 525px) {
+  body {
+    width: 75vw;
+  }
+}
+
+@media (min-width: 992px) {
+  #pesonalTag {
+    width: var(--width-m);
+    height: calc(var(--width-m) / 3);
+    animation: shadow 2s infinite alternate;
+  }
+
+  #personalTag > article {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+    align-items: center;
+    height: 100%;
+  }
+
+  section {
+    margin-top: 10px;
+    margin-bottom: 10px !important;
+  }
+  hr {
+    border: 0.2px solid rgba(211, 211, 211, 0.422);
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+
+  #personalTag,
+  #personalTag > article {
+    border-top-right-radius: var(--radius);
+    border-bottom-right-radius: var(--radius);
+  }
+
+  #personalTag,
+  #personalTag > article,
+  #personalTag > article > img {
+    border-top-left-radius: var(--radius);
+    border-bottom-left-radius: var(--radius);
+  }
+
+  #personalTag > article > img {
+    width: calc(var(--width-m) / 2) !important;
+  }
+
+  #personalTag > article > p {
+    line-height: 30px;
+    font-size: 1.5rem;
+    margin: 10px;
+  }
+
+  #favTec {
+    background-color: rgba(102, 51, 153, 0);
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+  }
+
+  #favTec > article {
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgb(26, 4, 60);
+    width: 170px;
+    height: 170px;
+  }
+
+  #favTec > article > p {
+    font-size: 1rem !important;
+    margin: 15px;
+  }
+
+  #newActivity{
+    margin: 20px;
+    width: 300px;
+  }
+}
