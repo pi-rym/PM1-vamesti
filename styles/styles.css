@@ -1,7 +1,8 @@
 :root {
-  background-color: rgb(26, 2, 48);
+  background-color: rgb(7, 2, 48);
   --width-m: 1200px;
   --radius: 50px;
+  --background-g :rgb(9, 2, 60);
 }
 body {
   box-sizing: border-box;
@@ -17,7 +18,7 @@ body {
 
 #personalTag {
   position: relative;
-  background-color: rgb(26, 4, 60);
+  background-color: var(--background-g);
   width: 100%;
 }
 
@@ -43,8 +44,7 @@ body {
 }
 
 #personalTag > article > img {
-  width: auto;
-  height: 100%;
+  width: 100%;
   object-fit: contain;
   -o-object-fit: contain;
 }
@@ -59,7 +59,7 @@ body {
   justify-content: space-around;
   width: auto;
   color: white;
-  background-color: rgb(26, 4, 60);
+  background-color: var(--background-g);
 }
 
 #favTec > article {
@@ -84,19 +84,17 @@ body {
 #personalTag,
 #favTec > article:hover {
   box-shadow: 0px 0px 50px -20px rgb(136, 129, 219);
-  animation: shadow 1s infinite alternate;
+  animation: shadow 1.5s infinite alternate;
 }
 
 #favTec > article:hover {
-  animation: borderRadiusIncrease 1s forwards , shadowIncrease 1.5s forwards;
+  animation: borderRadiusIncrease 1s forwards , shadowIncrease 1.5s forwards,shadow 1.5s infinite alternate;;
   transition: hover 1s ease-in-out;
 }
 
 #favTec > article {
   animation: borderRadiusDecrease 1s forwards, shadowDecrease 1.5s forwards;
-  transition: box-shadow 0.5s ease-in-out;
-  transition: border-radius 1s ease-in-out;
-  transition: width 1s ease-in-out;
+  transition: box-shadow 0.5s ease-in-out,border-radius 1s ease-in-out, width 1s ease-in-out;
 }
 
 
@@ -125,8 +123,9 @@ body {
   display: flex;
   flex-direction: column;
   font-size: 9px;
-  background-color: rgb(26, 4, 60);
+  background-color: var(--background-g);
   padding: 10px;
+  border-radius: 10px;
 }
 
 #newActivity {
@@ -150,7 +149,7 @@ textarea {
   box-sizing: border-box;
   width: 100%;
   margin: 5px auto;
-  background-color: rgb(16, 12, 75);
+  background-color: var(--background-g);
   outline: none;
   border: 0.5px solid gray;
   border-radius: 5px;
@@ -286,12 +285,12 @@ h1 {
   }
 
   #personalTag > article > img {
-    width: calc(var(--width-m) / 2) !important;
+    width: calc(var(--width-m) / 3) !important;
   }
 
   #personalTag > article > p {
     line-height: 30px;
-    font-size: 1.5em;
+    font-size: 1.5vw;
     margin: 10px;
   }
 
@@ -306,7 +305,7 @@ h1 {
   #favTec > article {
     flex-direction: column;
     justify-content: center;
-    background-color: rgb(26, 4, 60);
+    background-color:var(--background-g);
     width: 170px;
     height: 170px;
   }
