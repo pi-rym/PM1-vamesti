@@ -2,7 +2,8 @@
   background-color: rgb(7, 2, 48);
   --width-m: 1200px;
   --radius: 50px;
-  --background-g :rgb(9, 2, 60);
+  --background-g: rgb(9, 2, 60);
+  --card-heigth: calc((100% / 4.5));
 }
 body {
   box-sizing: border-box;
@@ -27,7 +28,7 @@ body {
   padding-top: 10px;
   text-align: center;
   line-height: 20px;
-  font-size: 16px ;
+  font-size: 16px;
   color: white;
 }
 
@@ -80,24 +81,6 @@ body {
 #personalTag > article {
   border-radius: 10%;
 }
-
-#personalTag,
-#favTec > article:hover {
-  box-shadow: 0px 0px 50px -20px rgb(136, 129, 219);
-  animation: shadow 1.5s infinite alternate;
-}
-
-#favTec > article:hover {
-  animation: borderRadiusIncrease 1s forwards , shadowIncrease 1.5s forwards,shadow 1.5s infinite alternate;;
-  transition: hover 1s ease-in-out;
-}
-
-#favTec > article {
-  animation: borderRadiusDecrease 1s forwards, shadowDecrease 1.5s forwards;
-  transition: box-shadow 0.5s ease-in-out,border-radius 1s ease-in-out, width 1s ease-in-out;
-}
-
-
 
 #favTec > article > p {
   margin: 0 auto;
@@ -156,7 +139,7 @@ textarea {
 }
 
 #favActivity > div > input,
-textarea ::placeholder {
+textarea {
   color: lightgray;
   font-size: 0.7rem !important;
 }
@@ -192,52 +175,53 @@ h1 {
   color: white;
   width: 30%;
 }
-
-@keyframes shadow {
-  0% {
-    box-shadow: 0px 0px 50px -20px rgb(136, 129, 219);
-  }
-  100% {
-    box-shadow: 0px 0px 50px -30px rgb(157, 11, 150);
-  }
+#addActivity {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-@keyframes borderRadiusIncrease {
-  0% {
-    border-radius: 10%;
-  }
-  100% {
-    border-radius: 50%;
-  }
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  text-align: center;
+  width: 100%;
+  max-width: 300px;
+  height: 350px;
+  border-radius: 10px;
+  background-color: var(--background-g);
+  color: white;
+  margin: 10px auto;
+  border-radius: 10px;
 }
 
-@keyframes borderRadiusDecrease {
-  0% {
-    border-radius: 50%;
-  }
-  100% {
-    border-radius: 10%;
-  }
+.card > div {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  object-position: center;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.card > div > img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 
-@keyframes shadowIncrease {
-  0% {
-    box-shadow: 0px 0px 50px -20px rgb(136, 129, 219, 0);
-  }
-  100% {
-    box-shadow: 0px 0px 50px -20px rgb(136, 129, 219, 1);
-  }
+.card > p {
+  margin: 5px;
 }
 
-@keyframes shadowDecrease {
-  0% {
-    box-shadow: 0px 0px 50px -20px rgb(136, 129, 219, 1);
-  }
-  100% {
-    box-shadow: 0px 0px 50px -20px rgb(136, 129, 219, 0);
-  }
+.title-card {
+  font-size: 1rem;
 }
-
+.body-card {
+  font-size: 0.8rem;
+  height: 100%;
+  overflow-y: auto;
+}
 
 @media (min-width: 525px) {
   body {
@@ -246,6 +230,23 @@ h1 {
 }
 
 @media (min-width: 992px) {
+  #addActivity {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+  .card {
+    margin: 10px;
+    transition: transform 0.5s ease-in-out ;
+    width: var(--card-heigth);
+    height: calc(--card-heigth / 3);
+  }
+
+  .card:hover {
+    transform: scale(105%);
+  }
+
   #pesonalTag {
     width: var(--width-m);
     height: calc(var(--width-m) / 3);
@@ -305,7 +306,7 @@ h1 {
   #favTec > article {
     flex-direction: column;
     justify-content: center;
-    background-color:var(--background-g);
+    background-color: var(--background-g);
     width: 170px;
     height: 170px;
   }
@@ -318,5 +319,69 @@ h1 {
   #newActivity {
     margin: 20px;
     width: 300px;
+  }
+
+  #personalTag,
+  #favTec > article:hover {
+    box-shadow: 0px 0px 50px -20px rgb(136, 129, 219);
+    animation: shadow 1.5s infinite alternate;
+  }
+
+  #favTec > article:hover{
+    animation: borderRadiusIncrease 1s forwards, shadowIncrease 1.5s forwards,
+      shadow 1.5s infinite alternate;
+    transition: hover 1s ease-in-out;
+  }
+
+  #favTec > article{
+    animation: borderRadiusDecrease 1s forwards, shadowDecrease 1.5s forwards;
+    transition: box-shadow 0.5s ease-in-out, border-radius 1s ease-in-out,
+      width 1s ease-in-out;
+  }
+
+  /*Animations*/
+  @keyframes shadow {
+    0% {
+      box-shadow: 0px 0px 50px -20px rgb(136, 129, 219);
+    }
+    100% {
+      box-shadow: 0px 0px 50px -30px rgb(157, 11, 150);
+    }
+  }
+
+  @keyframes borderRadiusIncrease {
+    0% {
+      border-radius: 10%;
+    }
+    100% {
+      border-radius: 50%;
+    }
+  }
+
+  @keyframes borderRadiusDecrease {
+    0% {
+      border-radius: 50%;
+    }
+    100% {
+      border-radius: 10%;
+    }
+  }
+
+  @keyframes shadowIncrease {
+    0% {
+      box-shadow: 0px 0px 50px -20px rgb(136, 129, 219, 0);
+    }
+    100% {
+      box-shadow: 0px 0px 50px -20px rgb(136, 129, 219, 1);
+    }
+  }
+
+  @keyframes shadowDecrease {
+    0% {
+      box-shadow: 0px 0px 50px -20px rgb(136, 129, 219, 1);
+    }
+    100% {
+      box-shadow: 0px 0px 50px -20px rgb(136, 129, 219, 0);
+    }
   }
 }
