@@ -230,6 +230,12 @@ h1 {
 }
 
 @media (min-width: 992px) {
+  #social {
+    display: flex;
+    flex-direction: row;
+    width: 100px;
+  }
+
   #addActivity {
     display: flex;
     flex-direction: row;
@@ -238,7 +244,7 @@ h1 {
   }
   .card {
     margin: 10px;
-    transition: transform 0.5s ease-in-out ;
+    transition: transform 0.5s ease-in-out;
     width: var(--card-heigth);
     height: calc(--card-heigth / 3);
   }
@@ -327,13 +333,13 @@ h1 {
     animation: shadow 1.5s infinite alternate;
   }
 
-  #favTec > article:hover{
+  #favTec > article:hover {
     animation: borderRadiusIncrease 1s forwards, shadowIncrease 1.5s forwards,
       shadow 1.5s infinite alternate;
     transition: hover 1s ease-in-out;
   }
 
-  #favTec > article{
+  #favTec > article {
     animation: borderRadiusDecrease 1s forwards, shadowDecrease 1.5s forwards;
     transition: box-shadow 0.5s ease-in-out, border-radius 1s ease-in-out,
       width 1s ease-in-out;
