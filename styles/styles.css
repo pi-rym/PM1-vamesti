@@ -1,14 +1,28 @@
 :root {
-  background-color: rgb(7, 2, 48);
+  background: linear-gradient(
+    to bottom right,
+    rgb(7, 2, 48) 30%,
+    rgb(25, 2, 54) 60%
+  );
   --width-m: 1200px;
   --radius: 50px;
-  --background-g: rgb(9, 2, 60);
+  --background-g: rgba(9, 2, 60, 0.198);
   --card-heigth: calc((100% / 4.5));
 }
 body {
   box-sizing: border-box;
   margin: 0 auto !important;
   width: calc(100vw - 10%);
+}
+
+.h1 {
+  font-size: 3rem !important;
+  font-weight: 900;
+  color: aqua;
+}
+
+.h1ShadowAnimation {
+  text-shadow: white 0px 0px 2px;
 }
 
 /* section{
@@ -41,6 +55,12 @@ body {
 .kanit-extralight {
   font-family: "Kanit", sans-serif;
   font-weight: 200;
+  font-style: normal;
+}
+
+.kanit-extrabold {
+  font-family: "Kanit", sans-serif;
+  font-weight: 800;
   font-style: normal;
 }
 
@@ -151,9 +171,9 @@ textarea {
   left: 5%;
 }
 
-h1 {
+/* h1 {
   font-size: 2rem !important;
-}
+} */
 h2 {
   font-size: 1.5rem !important;
 }
@@ -164,7 +184,7 @@ h1 {
   text-align: center;
   padding: 50px;
   font-size: 1rem;
-  color: white;
+  color: aqua !important;
 }
 
 #activity {
@@ -182,6 +202,7 @@ h1 {
 }
 
 .card {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -221,6 +242,26 @@ h1 {
   font-size: 0.8rem;
   height: 100%;
   overflow-y: auto;
+}
+
+.deleteButton {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.247);
+  right: 0%;
+  border-top-right-radius: 5px;
+  text-align: center;
+  align-items: center;
+  font-size: 1rem;
+  z-index: 9999;
+  color: rgba(0, 0, 0, 0.555);
+  border: none;
+  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+.deleteButton:hover {
+  cursor: pointer;
+  background-color: white;
+  color: rgba(0, 0, 0, 0.795);
 }
 
 @media (min-width: 525px) {

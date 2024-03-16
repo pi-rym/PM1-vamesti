@@ -1,0 +1,63 @@
+.alertBody {
+  position: fixed;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  width: 200px;
+  background-color: rgb(52, 52, 52);
+  border-radius: 5px;
+  left: 50%;
+  top: -20%;
+  transition: top 1s ease-in-out;
+  box-shadow: 0px 0px 5px gray;
+}
+
+.alertBodyShow {
+  animation: alert 1s forwards;
+}
+
+.alertTitle {
+  font-size: 12px;
+  font-weight: 700;
+  color: white;
+}
+
+.alertDes {
+  font-size: 10px;
+  padding: 5px;
+  color: white;
+  text-align: start;
+}
+
+.alertDes,
+.alertTitle {
+  margin: 5px;
+}
+
+.alertButton {
+  width: 60px;
+  color: white;
+  background-color: rgb(24, 81, 202);
+  border-radius: 5px;
+  outline: none;
+  border: 0px;
+  padding: 3px;
+  margin: 5px;
+}
+
+.alertButton {
+  cursor: pointer;
+}
+
+.alertButton:active {
+  border: 1px inset black;
+  padding: 2px;
+}
+
+@keyframes alert {
+  0% {
+    top: -20%;
+  }
+  100% {
+    top: 30%;
+  }
+}
